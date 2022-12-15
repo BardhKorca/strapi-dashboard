@@ -1,0 +1,7 @@
+{
+  "name": "frontend-strapi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
