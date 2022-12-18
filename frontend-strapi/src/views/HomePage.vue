@@ -1,68 +1,46 @@
 <template>
-  <ion-page>
-    <ion-header :translucent="true">
+  <MenuBox/>
+  <ion-page id="main-content">
+    <ion-header>
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
     
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-      </div>
-    </ion-content>
+    <UserCard/>
   </ion-page>
+
 </template>
-
 <script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-import { defineComponent } from 'vue';
+// import Dashboard from '../views/DashboardView.vue';
+// import HomePage from '../views/HomePage.vue';
+// import SignIn from '../views/SignIn.vue';
 
-export default defineComponent({
-  name: 'HomePage',
-  components: {
-    IonContent,
+import {
+    IonButtons,
     IonHeader,
+    IonMenuButton,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+  } from '@ionic/vue';  
+import { defineComponent } from 'vue';
+import MenuBox from '@/components/MenuBox.vue'
+import UserCard from '@/components/UserCard.vue';
+
+export default defineComponent({
+  components: {
+    IonButtons,
+      IonHeader,
+      IonMenuButton,
+      IonPage,
+      IonTitle,
+      IonToolbar,
+      MenuBox,
+      UserCard,
   }
 });
 </script>
-
-<style scoped>
-#container {
-  text-align: center;
-  
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-</style>
